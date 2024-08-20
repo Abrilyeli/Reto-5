@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .contenedor-formulario {
+            margin-bottom: 20px;
+        }
+        .contenedor-formulario label, select, input, button {
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        .contenedor-formulario button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .contenedor-formulario button:hover {
+            background-color: #218838;
+        }
+        .lista-compras {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .lista-compras h3 {
+            margin-top: 0;
+        }
+        .categoria {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="preguntaInicial" class="contenedor-formulario">
+        <label>¿Deseas agregar un alimento a tu lista de compras?</label>
+        <button id="siBtn">Sí</button>
+        <button id="noBtn">No</button>
+    </div>
+
+    <div id="formularioAlimento" class="contenedor-formulario" style="display: none;">
+        <label for="alimento">Agregar un alimento a la lista de compras:</label>
+        <input type="text" id="alimento" placeholder="Escribe el nombre del alimento" required>
+
+        <label for="categoria">Selecciona la categoría:</label>
+        <select id="categoria">
+            <option value="Frutas">Frutas</option>
+            <option value="Lácteos">Lácteos</option>
+            <option value="Congelados">Congelados</option>
+            <option value="Dulces">Dulces</option>
+            <option value="Otros">Otros</option>
+        </select>
+
+        <button id="agregarBtn">Agregar a la lista</button>
+        <button id="finalizarBtn">Finalizar lista de compras</button>
+    </div>
+
+    <div id="listaCompras" class="lista-compras" style="display: none;">
+        <h3>Lista de compras:</h3>
+        <div id="categorias"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
